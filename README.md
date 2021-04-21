@@ -1,10 +1,10 @@
  > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
  > Prompt text is any lines beginning with "\>"
  > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
-# \<Project title\>
+# Life Organizer
  > Your author list below should include links to all members GitHub (remove existing author).
  
- > Authors: \<[Jeffrey McDaniel](https://github.com/jmcda001)\>
+ > Authors: \<[Skyler Saltos](https://github.com/skycaliah)\>, \<[Nina Huynh](https://github.com/nbhuynh)\>, \<[Jeffrey Wang](https://github.com/jeffwang372)\>
  
  > You will be forming a group of **THREE** students and working on an interesting project. A list of proposed project ideas that have been successful in previous quarters is given in the project specifications link on iLearn. You can select an idea from the list, start thinking about the features you will implement, what design patterns can help you implement them, and why. If you want to propose your own original idea, you will have to contact an instructor to discuss the project and obtain written permission before you submit your project proposal. Your project needs to implement two design patterns.The project work should be divided almost equally among team members and each member is expected to work on at least one design pattern (more than one partner may work on a pattern) and some of its test cases. You can of course help each other, but it needs to be clear who will be responsible for which patterns and for which features.
  
@@ -18,6 +18,23 @@
 > * All project phases are to be submitted to this GitHub repository. You should modify this README file to reflect the different phases of the project. In addition, you should regularly hold sprint meetings with your group.
 
 ## Project Description
+ As college students, organization is crucial for academic success. Often it is important to have tools to help us organize our school work and activities. This is why we have    decided to develop an task organizer for our CS100 project. We believe it will be a practical and beneficial tool that can be used daily.
+ 
+The tools we will be using for this project include:
+* [C++](https://www.cplusplus.com/) - A programming language
+* [Valgrind](https://valgrind.org/) - Memory leak detector
+* [CMake](https://cmake.org/) - Software for build automation, testing, packaging and installation of software
+
+This project will take in user task information such as title, date, time, duration, location, and priority. The organizer will also prompt the user for a description for each task they enter. This project will output tasks/events that can be further grouped into lists of tasks/events. The tasks can be displayed and organized by type, priority, or date/time. Tasks can also have subtasks. Tasks and task lists can also be removed when not needed anymore.
+
+The design patterns we will be using are:
+
+COMPOSITE
+We chose this design pattern because we know that our project will involve aggregation. This is because our project will allow lists with tasks and tasks with subtasks. This means that the project can be implemented with a tree structure. We anticipate difficulty in implementing the list-task-subtask hierarchy, which the composite design pattern can solve because it allows us to treat individual objects and composition of objects uniformly. The recursive composition aspect of this design pattern will also allow us to more easily handle the list-task-subtask hierarchy when traversing, editing, or displaying components in a list.
+
+ABSTRACT FACTORY
+We chose this design pattern because it makes it easier to implement the list, task, and subtask classes because they should store similar information, and thus should have similar structure. We anticipate that if we were to create the classes independently of each other, it might lead to unnecessary complications and confusion while trying to work with and implement the classes. By using an abstract factory design pattern, we can make the classes uniform so that they can all be used in a similar way. This design also makes it easy for the user to add and remove lists, tasks, and subtasks during runtime because of the uniformity of the classes and their functions.
+ 
  > Your project description should summarize the project you are proposing. Be sure to include
  > * Why is it important or interesting to you?
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
