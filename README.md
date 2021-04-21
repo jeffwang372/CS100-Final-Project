@@ -1,10 +1,10 @@
- # Life Organizer
+ # Task Scheduler
  
  > Authors: \<[Skyler Saltos](https://github.com/skycaliah)\>, \<[Nina Huynh](https://github.com/nbhuynh)\>, \<[Jeffrey Wang](https://github.com/jeffwang372)\>
  
  
 ## Project Description
- As college students, organization is crucial for academic success. Often it is important to have tools to help us organize our school work and activities. This is why we have    decided to develop an task organizer for our CS100 project. We believe it will be a practical and beneficial tool that can be used daily.
+ As college students, organization is crucial for academic success. Often it is important to have tools to help us organize our school work and activities. This is why we have    decided to develop a task scheduler for our CS100 project. We believe it will be a practical and beneficial tool that can be used daily.
  
 The tools we will be using for this project include:
 * [C++](https://www.cplusplus.com/) - A programming language
