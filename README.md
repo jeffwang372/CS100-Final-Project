@@ -1,6 +1,6 @@
  # Task Scheduler
  
- > Authors: \<[Skyler Saltos](https://github.com/skycaliah)\>, \<[Nina Huynh](https://github.com/nbhuynh)\>, \<[Jeffrey Wang](https://github.com/jeffwang372)\>
+ Authors: [Skyler Saltos](https://github.com/skycaliah), [Nina Huynh](https://github.com/nbhuynh), [Jeffrey Wang](https://github.com/jeffwang372)
  
  
 ## Project Description
