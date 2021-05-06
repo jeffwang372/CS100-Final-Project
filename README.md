@@ -18,9 +18,10 @@ The design patterns we will be using are:
 COMPOSITE
 We chose this design pattern because we know that our project will involve aggregation. This is because our project will allow lists with tasks and tasks with subtasks. This means that the project can be implemented with a tree structure. We anticipate difficulty in implementing the list-task-subtask hierarchy, which the composite design pattern can solve because it allows us to treat individual objects and composition of objects uniformly. The recursive composition aspect of this design pattern will also allow us to more easily handle the list-task-subtask hierarchy when traversing, editing, or displaying components in a list.
 
-ABSTRACT FACTORY
-We chose this design pattern because it makes it easier to implement the list, task, and subtask classes because they should store similar information, and thus should have similar structure. We anticipate that if we were to create the classes independently of each other, it might lead to unnecessary complications and confusion while trying to work with and implement the classes. By using an abstract factory design pattern, we can make the classes uniform so that they can all be used in a similar way. This design also makes it easy for the user to add and remove lists, tasks, and subtasks during runtime because of the uniformity of the classes and their functions.
- 
+STRATEGY
+
+We chose this design pattern because it makes it easier to implement different variations of functions across the list, task, and subtask classes. We anticipate that if we did not use the strategy pattern, it would be tedious and confusing to have to implement separate definitions everytime we wanted to make a variation of a function. By using the strategy pattern, we can implement different behaviors of the same function (such as print(), addMember(), etc) without having to edit as much code as you would otherwise. The inheritance factors out the common functionality of algorithms. This is a good solution because it eliminates redundancy, makes it more convenient to implement functions in the future, and makes it less confusing to develop.
+
  
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
