@@ -3,6 +3,8 @@
 
 #include <string>
 #include <vector>
+#include "tasktemplate.hpp"
+#include "taskscomposite.hpp"
 
 class Menu {
     public:
