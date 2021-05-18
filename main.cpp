@@ -4,6 +4,8 @@ using namespace std;
 
 #include "menu.hpp"
 
+
+
 int main() {
     Menu taskMenu = Menu();
 
@@ -25,7 +27,13 @@ int main() {
         }
 	if (taskMenu.userInput == "c") {
 		taskMenu.addTask();
-	}
+	}//user selected to create task
+
+	if(taskMenu.userInput == "a") {
+
+		taskMenu.createList();
+
+	}//user created new list
     }
 
     return 0;

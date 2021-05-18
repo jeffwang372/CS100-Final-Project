@@ -3,6 +3,7 @@
 
 #include "tasktemplate.hpp"
 
+
 class TasksComposite:public TaskTemplate {
 	private:
 		string time;
