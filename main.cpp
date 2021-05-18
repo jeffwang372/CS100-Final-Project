@@ -23,6 +23,9 @@ int main() {
             cout << taskMenu.prompt;
             cin >> taskMenu.userInput;
         }
+	if (taskMenu.userInput == "c") {
+		taskMenu.addTask();
+	}
     }
 
     return 0;
