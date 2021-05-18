@@ -5,6 +5,8 @@
 #include <vector>
 #include "tasktemplate.hpp"
 #include "taskscomposite.hpp"
+#include "listscomposite.hpp"
+
 
 class Menu {
     public:

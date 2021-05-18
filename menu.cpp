@@ -1,7 +1,10 @@
 #include "menu.hpp"
-
 #include <iostream>
 using namespace std;
+
+
+int listID = 1; // varaible to assign eash list a unique ID
+int taskID = 1; // variable to assign each task a unique ID
 
 void Menu::displayMenu() {
     cout << "Task Menu" << endl;
@@ -18,17 +21,16 @@ void Menu::displayMenu() {
 }
 
 void Menu::addTask() {
-	int listID;
+	int listInput;
 	string time;
         string date;
         string duration;
         string location;
         string subject;
         string body; 
-	int ID = 0; //TODO: figure out how to generate unique IDs for each task
-	
+
 	cout << "Enter list ID to add task to: ";
-	cin >> listID; //TODO: figure out how to push task into list
+	cin >> listInput; //TODO: figure out how to push task into list
 	cout << "Enter time: ";
 	cin >> time;
 	cout << "Enter date: ";
@@ -41,6 +43,40 @@ void Menu::addTask() {
         cin >> subject;
         cout << "Enter body: ";
         cin >> body;
-	TasksComposite task1(time, date, duration, location, subject, body, ID);
-}
+	TasksComposite task1(time, date, duration, location, subject, body, taskID);
+	++taskID; //increment ID 
+
+
+	for ( unsigned int i = 0;  i < Lists.size(); ++i ){
+
+		if(Lists.at(i)->getID() == listInput ) {
+			Lists.at(i)->addTask(); //TODO: complete addTask to put task into LIST
+
+		}//list ID found so add task to the list
+
+	}//end for to iterate to lists in menu to add task to specific list 
+
+
+}//end add Task 
+
+
+void Menu::createList(){
+
+	string title;
+
+	cout << "Enter title for list: ";
+	cin >> title;
+	ListsComposite* newList = new ListsComposite (title, listID);
+	++listID;
+	cout << "New LIST ID GLOBAL: " << listID << endl;
+
+	Lists.push_back(newList);
+
+	
+
+
+
+
+
+}//end createList
 

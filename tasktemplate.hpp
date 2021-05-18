@@ -17,6 +17,7 @@ class TaskTemplate {
 		TaskTemplate();
 		void addTask();
 		void removeTask();
+		int getID();
 
 };
 

@@ -8,5 +8,6 @@ ADD_EXECUTABLE(test
     menu.cpp
     tasktemplate.cpp
     taskscomposite.cpp
+    listscomposite.cpp
 )
 

@@ -12,3 +12,10 @@ void TaskTemplate::removeTask() {
 //TODO
 }
 
+
+
+int TaskTemplate::getID(){
+
+return this->ID;
+
+}//getter for ID
