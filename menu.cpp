@@ -3,15 +3,15 @@
 using namespace std;
 
 
-int listID = 1; // varaible to assign eash list a unique ID
-int taskID = 1; // variable to assign each task a unique ID
+int listID = 0; // varaible to assign eash list a unique ID
+int taskID = 0; // variable to assign each task a unique ID
 
 void Menu::displayMenu() {
     cout << "Task Menu" << endl;
     cout << "\ta - Create list" << endl;
     cout << "\tb - Remove list" << endl;
-    cout << "\tc - Add task" << endl;
-    cout << "\td - Remove task" << endl;
+    cout << "\tc - Create task" << endl;
+    cout << "\td - Delete task" << endl;
     cout << "\te - Display by priority" << endl;
     cout << "\tf - Display by date" << endl;
     cout << "\tg - Display by duration" << endl;
@@ -20,7 +20,7 @@ void Menu::displayMenu() {
     cout << prompt;
 }
 
-void Menu::addTask() {
+void Menu::createTask() {
 	int listInput;
 	string time;
         string date;
@@ -43,14 +43,17 @@ void Menu::addTask() {
         cin >> subject;
         cout << "Enter body: ";
         cin >> body;
-	TasksComposite task1(time, date, duration, location, subject, body, taskID);
+	TasksComposite* task1 = new TasksComposite(time, date, duration, location, subject, body, taskID);
+	
+	
 	++taskID; //increment ID 
 
 
 	for ( unsigned int i = 0;  i < Lists.size(); ++i ){
 
 		if(Lists.at(i)->getID() == listInput ) {
-			Lists.at(i)->addTask(); //TODO: complete addTask to put task into LIST
+			cout << "Pushing task to list" << endl;
+			Lists.at(i)->addTask(task1); //TODO: complete addTask to put task into LIST
 
 		}//list ID found so add task to the list
 
@@ -72,11 +75,54 @@ void Menu::createList(){
 
 	Lists.push_back(newList);
 
-	
-
-
-
-
 
 }//end createList
+
+
+
+void Menu::deleteTask(){
+	
+	int listRemoveID;
+	int taskRemoveID;
+
+	cout << "Enter list ID to remove task from: " ;
+	cin >> listRemoveID;
+	cout << endl << "Enter task ID to remove: " ;
+	cin >> taskRemoveID; 
+ 	cout << endl;
+
+	      for ( unsigned int i = 0;  i < Lists.size(); ++i ){
+
+                if(Lists.at(i)->getID() == listRemoveID ) {
+                        Lists.at(i)->removeTask(taskRemoveID); 
+
+                }//list ID found so remove task to the list
+
+        }//end for to iterate to lists in menu to remove task to specific list
+
+}//remove task from certain list
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

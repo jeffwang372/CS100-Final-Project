@@ -9,14 +9,13 @@ using namespace std;
 class TaskTemplate {
 	private:
 		//PrintStrat* printStrat; //TODO
-		vector<TaskTemplate*> taskChildren;
 	protected:
 		int ID;
 
 	public:
 		TaskTemplate();
-		void addTask();
-		void removeTask();
+		virtual void addTask(TaskTemplate* newTask) = 0;
+		virtual void removeTask(int removeID) = 0;
 		int getID();
 
 };
