@@ -25,7 +25,7 @@ We chose this design pattern because it makes it easier to implement different v
  
  > ## Phase II
 ## Class Diagram
- > ![alt text](https://github.com/cs100/final-project-ssalt006_jwang619_nhuyn035-nacl/blob/master/CS100_Final_UML_2.0.png)
+ > ![alt text](https://github.com/cs100/final-project-ssalt006_jwang619_nhuyn035-nacl/blob/master/UMLFinalProject4.0.png)
  > 
  We implemented the List and Task object using the Composite pattern where the Lists and Tasks inherit from a abstract TaskTemplate class. The ListComposite class acts as root node of our tree for our composite pattern while all other nodes will be a Task object.These objects contain descriptive information as well as vectors to each of their childrenTasks. They will also contain a pointer to the PrintStrat class which implements our print class. The print class is implemented using the Strategy pattern for the print functions of the list and task objects. Print Functions outputting priority,date,and durations are implemented differently depending on whether it is a task or a list object. The Menu class stores a vector that stores all lists created by user and holds all functions to serve as the user interface to operate the program. 
  
