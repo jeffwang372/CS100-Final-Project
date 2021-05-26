@@ -26,7 +26,7 @@ int main() {
             cin >> taskMenu.userInput;
         }
 	if (taskMenu.userInput == "c") {
-		taskMenu.addTask();
+		taskMenu.createTask();
 	}//user selected to create task
 
 	if(taskMenu.userInput == "a") {
@@ -34,6 +34,12 @@ int main() {
 		taskMenu.createList();
 
 	}//user created new list
+
+	if(taskMenu.userInput == "d" ) {
+	
+		taskMenu.deleteTask();
+
+	}//user wants to remove task from lsit 
     }
 
     return 0;

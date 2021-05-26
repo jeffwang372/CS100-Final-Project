@@ -17,8 +17,8 @@ class Menu {
         Menu() {}
         void createList();
         void removeList();
-        void addTask();
-        void removeTask();
+        void createTask();
+        void deleteTask();
 
         void displayMenu();
         void displayPriority();

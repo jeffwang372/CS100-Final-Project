@@ -10,11 +10,16 @@ class  ListsComposite: public TaskTemplate {
 
 	private:
 		string title;
-		vector<TaskTemplate*> allTasks;
-
 	public:
 
+	vector<TaskTemplate*> taskChildren;
+
 	ListsComposite(string title, int ID); //constructor
+	
+	string getTitle();
+	
+	void addTask(TaskTemplate* newTask);
+	void removeTask(int removeID);
 	
 
 
