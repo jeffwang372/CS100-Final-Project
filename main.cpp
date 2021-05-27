@@ -40,6 +40,9 @@ int main() {
 		taskMenu.deleteTask();
 
 	}//user wants to remove task from lsit 
+	if(taskMenu.userInput == "b" ) {
+		taskMenu.removeList();
+	}
     }
 
     return 0;

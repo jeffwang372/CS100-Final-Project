@@ -14,6 +14,7 @@ class TasksComposite:public TaskTemplate {
 		string body;
 		
 	public:
+		~TasksComposite();
 		TasksComposite(string time, string date, string duration, string location, string subject, string body, int ID);
 		string getTime();
 		string getLocation();
@@ -23,6 +24,7 @@ class TasksComposite:public TaskTemplate {
 		string getDuration();
 		virtual void addTask(TaskTemplate* newTask);
 		virtual void removeTask(int removeID);	
+		virtual void removeAllTasks();
 
 };
 
