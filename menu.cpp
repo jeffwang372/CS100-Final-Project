@@ -3,6 +3,17 @@
 using namespace std;
 
 
+Menu::~Menu() {
+	for ( unsigned int i = 0;  i < Lists.size(); ++i ){
+
+                        delete Lists.at(i);
+                        //Lists.erase(Lists.begin());
+                        
+        }//end for to iterate to lists in menu to add task to specific list
+              Lists.clear();
+                       
+}
+
 int listID = 0; // varaible to assign eash list a unique ID
 int taskID = 0; // variable to assign each task a unique ID
 
@@ -101,6 +112,27 @@ void Menu::deleteTask(){
         }//end for to iterate to lists in menu to remove task to specific list
 
 }//remove task from certain list
+
+
+void Menu::removeList() {
+	int indexRemove;
+
+	cout << "Enter ID of list to be removed: ";
+	cin >> indexRemove;
+	cout << endl;
+
+
+	 for ( unsigned int i = 0;  i < Lists.size(); ++i ){
+
+                if(Lists.at(i)->getID() == indexRemove) {
+                        Lists.at(i)->removeAllTasks();
+			delete Lists.at(i);
+			Lists.erase(Lists.begin() + i);
+			cout << "Successfully deleted list" << endl;
+
+                }
+	}	
+}
 
 
 

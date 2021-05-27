@@ -14,13 +14,14 @@ class  ListsComposite: public TaskTemplate {
 
 	vector<TaskTemplate*> taskChildren;
 
+	~ListsComposite();
 	ListsComposite(string title, int ID); //constructor
 	
 	string getTitle();
 	
 	void addTask(TaskTemplate* newTask);
 	void removeTask(int removeID);
-	
+	void removeAllTasks();	
 
 
 

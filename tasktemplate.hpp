@@ -16,7 +16,9 @@ class TaskTemplate {
 		TaskTemplate();
 		virtual void addTask(TaskTemplate* newTask) = 0;
 		virtual void removeTask(int removeID) = 0;
+		virtual void removeAllTasks() = 0;
 		int getID();
+		virtual ~TaskTemplate() {}
 
 };
 

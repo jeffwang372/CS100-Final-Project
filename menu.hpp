@@ -13,7 +13,8 @@ class Menu {
         std::string prompt;
         std::string userInput;
         vector<TaskTemplate*> Lists;
-
+	
+	~Menu();
         Menu() {}
         void createList();
         void removeList();

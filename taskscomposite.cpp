@@ -1,6 +1,10 @@
 #include "taskscomposite.hpp"
 #include <iostream>
 
+TasksComposite::~TasksComposite() {
+	//delete this;
+}
+
 TasksComposite::TasksComposite(string time, string date, string duration, string location, string subject, string body, int ID) {
 	this->time = time;
 	this->date = date;
@@ -52,4 +56,4 @@ void TasksComposite::removeTask(int removeID){
 
 }//leave empty
 
-
+void TasksComposite::removeAllTasks() {}
