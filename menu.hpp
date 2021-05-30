@@ -10,6 +10,7 @@
 
 class Menu {
     public:
+	PrintStrat* printStrat;
         std::string prompt;
         std::string userInput;
         vector<TaskTemplate*> Lists;
@@ -25,6 +26,9 @@ class Menu {
         void displayPriority();
         void displayDate();
         void displayDuration();
+
+	void set_strategy(PrintStrat* s);
+	void printByPriority(std::ostream& out) const;
 };
 
 #endif
