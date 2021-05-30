@@ -134,12 +134,27 @@ void Menu::removeList() {
 	}	
 }
 
+void Menu::set_strategy(PrintStrat* s) {
+        if (printStrat != nullptr) {
+                delete this->printStrat;
+        }
+        this->printStrat = s;
+}
 
+void Menu::printByPriority(std::ostream& out) const {
+	if (!Lists.empty()) {
+		for (int i = 0; i < Lists.size(); ++i) {
+			std::cout << Lists.at(i)->getID() << ": " << Lists.at(i)->getTitle() << std::endl;
+			printStrat->printPriority(Lists.at(i));
+		}
+	}
+	else {
+		std::cout << "No lists left." << std::endl;
+	}	
+}
 
-
-
-
-
+//void Menu::printByDate(std::ostream& out) const
+//void Menu::printByDuration(std::ostream& out) const
 
 
 

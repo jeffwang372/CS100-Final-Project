@@ -67,3 +67,21 @@ void ListsComposite::removeAllTasks() {
 	
 }
 
+void ListsComposite::set_strategy(PrintStrat* s) {
+        if (printStrat != nullptr) {
+                delete this->printStrat;
+        }
+        this->printStrat = s;
+}
+
+void ListsComposite::printByPriority(std::ostream& out) const {
+        if (!taskChildren.empty()) {
+                printStrat->printPriority(this);
+        }
+        else {
+                std::cout << "No tasks left." << std::endl;
+        }
+}
+
+//void ListsComposite::printByDate(std::ostream& out) const
+//void ListsComposite::printByDuration(std::ostream& out) const
