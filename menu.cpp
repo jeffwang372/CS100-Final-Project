@@ -100,7 +100,7 @@ void Menu::createList(){
 	getline(cin, title);
 	getline(cin, title);
 	
-	ListsComposite* newList = new ListsComposite (title, listID);
+	ListsComposite* newList = new ListsComposite(title, listID);
 	++listID;
 
 	Lists.push_back(newList);
@@ -181,7 +181,7 @@ void Menu::removeList() {
 cout << "List ID to be removed not found." << endl;
 return;	
 }
-/*
+
 void Menu::set_strategy(PrintStrat* s) {
         if (printStrat != nullptr) {
                 delete this->printStrat;
@@ -189,7 +189,7 @@ void Menu::set_strategy(PrintStrat* s) {
         this->printStrat = s;
 }
 
-void Menu::printByPriority(std::ostream& out) const {
+void Menu::printByPriority(std::ostream& out) {
 	if (!Lists.empty()) {
 		for (int i = 0; i < Lists.size(); ++i) {
 			std::cout << Lists.at(i)->getID() << ": " << Lists.at(i)->getTitle() << std::endl;
@@ -200,24 +200,17 @@ void Menu::printByPriority(std::ostream& out) const {
 		std::cout << "No lists left." << std::endl;
 	}	
 }
-*/
+
 //void Menu::printByDate(std::ostream& out) const
-//void Menu::printByDuration(std::ostream& out) const
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+void Menu::printByDuration(std::ostream& out) {
+        if (!Lists.empty()) {
+                for (int i = 0; i < Lists.size(); ++i) {
+                        std::cout << Lists.at(i)->getID() << ": " << Lists.at(i)->getTitle() << std::endl;
+                        printStrat->printDuration(Lists.at(i));
+                }
+        }
+        else {
+                std::cout << "No lists left." << std::endl;
+        }
+}

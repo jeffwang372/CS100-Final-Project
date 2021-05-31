@@ -47,11 +47,11 @@ void TasksComposite::addTask(TaskTemplate* newTask){
 	
 }//leave empty
 
-
-
 void TasksComposite::removeTask(int removeID){
 
 
 }//leave empty
 
 void TasksComposite::removeAllTasks() {}
+
+string TasksComposite::getTitle() { return ""; }

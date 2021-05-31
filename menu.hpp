@@ -6,7 +6,7 @@
 #include "tasktemplate.hpp"
 #include "taskscomposite.hpp"
 #include "listscomposite.hpp"
-
+#include "printstrat.hpp"
 
 class Menu {
     public:
@@ -28,7 +28,8 @@ class Menu {
         void displayDuration();
 
 	void set_strategy(PrintStrat* s);
-	void printByPriority(std::ostream& out) const;
+	void printByPriority(std::ostream& out);
+	void printByDuration(std::ostream& out);
 };
 
 #endif

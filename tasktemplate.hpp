@@ -7,8 +7,6 @@
 using namespace std;
 
 class TaskTemplate {
-	private:
-		//PrintStrat* printStrat; //TODO
 	protected:
 		int ID;
 
@@ -18,6 +16,7 @@ class TaskTemplate {
 		virtual void removeTask(int removeID) = 0;
 		virtual void removeAllTasks() = 0;
 		int getID();
+		virtual string getTitle() = 0;
 		virtual ~TaskTemplate() {}
 
 };
