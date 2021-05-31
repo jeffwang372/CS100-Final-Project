@@ -26,7 +26,7 @@ class TasksComposite: public TaskTemplate {
 		virtual void removeTask(int removeID);	
 		virtual void removeAllTasks();
 		virtual string getTitle();
-
+		virtual vector<TaskTemplate*> getTasks();
 };
 
 

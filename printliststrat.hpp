@@ -7,8 +7,8 @@ class PrintListStrat: public PrintStrat
 {
 public:
         PrintListStrat();
-        void printPriority(ListsComposite* t);
-	void printDuration(ListsComposite* t);
+        void printPriority(TaskTemplate* t);
+	void printDuration(TaskTemplate* t);
 }; //Print all tasks in order in all lists
 
 #endif

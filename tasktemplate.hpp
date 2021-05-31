@@ -19,6 +19,13 @@ class TaskTemplate {
 		virtual string getTitle() = 0;
 		virtual ~TaskTemplate() {}
 
+                virtual string getTime() = 0;
+                virtual string getLocation() = 0;
+                virtual string getSubject() = 0;
+                virtual string getBody() = 0;
+                virtual string getDate() = 0;
+                virtual double getDuration() = 0;
+		virtual vector<TaskTemplate*> getTasks() = 0;
 };
 
 #endif

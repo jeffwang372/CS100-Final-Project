@@ -28,7 +28,7 @@ string ListsComposite::getTitle(){
 
 
 
-void ListsComposite::addTask(TasksComposite* newTask){
+void ListsComposite::addTask(TaskTemplate* newTask){
 
 	taskChildren.push_back(newTask);
 
@@ -90,3 +90,11 @@ void ListsComposite::printByDuration(std::ostream& out) {
                 std::cout << "No tasks left." << std::endl;
         }
 }
+
+string ListsComposite::getTime() { return ""; }
+string ListsComposite::getLocation() { return ""; }
+string ListsComposite::getSubject() { return ""; }
+string ListsComposite::getBody() { return ""; }
+string ListsComposite::getDate() { return ""; }
+double ListsComposite::getDuration() { return 0; }
+vector<TaskTemplate*> ListsComposite::getTasks() { return taskChildren;  }

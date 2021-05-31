@@ -6,24 +6,26 @@
 
 PrintTaskStrat::PrintTaskStrat() {}
 
-void PrintTaskStrat::printPriority(ListsComposite* t) {
-       	sort(t->taskChildren.begin(), t->taskChildren.end(), comparatorID);
+void PrintTaskStrat::printPriority(TaskTemplate* t) {
+	vector<TaskTemplate*> v = t->getTasks();
+       	sort(v.begin(), v.end(), comparatorID);
 	std::cout << t->getTitle() << std::endl;
-	for (int i = 0; i < t->taskChildren.size(); ++i) {
-		std::cout << t->taskChildren.at(i)->getID() << ": " << t->taskChildren.at(i)->getSubject() << "due " << t->taskChildren.at(i)->getTime() << ", " << t->taskChildren.at(i)->getDate();
-		std::cout << std::endl << "\t" << "Duration: " << t->taskChildren.at(i)->getDuration() << " hours";
-		std::cout << std::endl << "\t" << "Location: " << t->taskChildren.at(i)->getLocation();
-		std::cout << std::endl << "\t" << "Body: " << t->taskChildren.at(i)->getBody() << std::endl;
+	for (int i = 0; i < v.size(); ++i) {
+		std::cout << v.at(i)->getID() << ": " << v.at(i)->getSubject() << "due " << v.at(i)->getTime() << ", " << v.at(i)->getDate();
+		std::cout << std::endl << "\t" << "Duration: " << v.at(i)->getDuration() << " hours";
+		std::cout << std::endl << "\t" << "Location: " << v.at(i)->getLocation();
+		std::cout << std::endl << "\t" << "Body: " << v.at(i)->getBody() << std::endl;
 	}
 }
 
-void PrintTaskStrat::printDuration(ListsComposite* t) {
-        sort(t->taskChildren.begin(), t->taskChildren.end(), comparatorDuration);
+void PrintTaskStrat::printDuration(TaskTemplate* t) {
+        vector<TaskTemplate*> v = t->getTasks();
+        sort(v.begin(), v.end(), comparatorDuration);
         std::cout << t->getTitle() << std::endl;
-        for (int i = 0; i < t->taskChildren.size(); ++i) {
-                std::cout << t->taskChildren.at(i)->getID() << ": " << t->taskChildren.at(i)->getSubject() << "due " << t->taskChildren.at(i)->getTime() << ", " << t->taskChildren.at(i)->getDate();
-                std::cout << std::endl << "\t" << "Duration: " << t->taskChildren.at(i)->getDuration() << " hours";
-                std::cout << std::endl << "\t" << "Location: " << t->taskChildren.at(i)->getLocation();
-                std::cout << std::endl << "\t" << "Body: " << t->taskChildren.at(i)->getBody() << std::endl;
+        for (int i = 0; i < v.size(); ++i) {
+                std::cout << v.at(i)->getID() << ": " << v.at(i)->getSubject() << "due " << v.at(i)->getTime() << ", " << v.at(i)->getDate();
+                std::cout << std::endl << "\t" << "Duration: " << v.at(i)->getDuration() << " hours";
+                std::cout << std::endl << "\t" << "Location: " << v.at(i)->getLocation();
+                std::cout << std::endl << "\t" << "Body: " << v.at(i)->getBody() << std::endl;
         }
 }

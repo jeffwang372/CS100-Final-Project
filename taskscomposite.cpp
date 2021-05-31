@@ -55,3 +55,7 @@ void TasksComposite::removeTask(int removeID){
 void TasksComposite::removeAllTasks() {}
 
 string TasksComposite::getTitle() { return ""; }
+vector<TaskTemplate*> TasksComposite::getTasks() {
+	vector<TaskTemplate*> v; //empty vector
+	return v;
+}
