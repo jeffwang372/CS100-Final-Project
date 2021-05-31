@@ -4,7 +4,7 @@
 #include "tasktemplate.hpp"
 
 
-class TasksComposite:public TaskTemplate {
+class TasksComposite: public TaskTemplate {
 	private:
 		string time;
 		string date;
@@ -25,6 +25,7 @@ class TasksComposite:public TaskTemplate {
 		virtual void addTask(TaskTemplate* newTask);
 		virtual void removeTask(int removeID);	
 		virtual void removeAllTasks();
+		virtual string getTitle();
 
 };
 

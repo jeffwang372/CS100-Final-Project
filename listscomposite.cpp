@@ -1,4 +1,5 @@
 #include "listscomposite.hpp"
+#include "printstrat.hpp"
 #include <iostream>
 
 
@@ -15,6 +16,7 @@ ListsComposite::ListsComposite(string title, int ID){
 
 	this->title = title;
 	this->ID = ID;
+	this->printStrat = nullptr;
 	cout << "New list created with ID: " << this->ID << endl;
 
 }//end constructor 
@@ -26,7 +28,7 @@ string ListsComposite::getTitle(){
 
 
 
-void ListsComposite::addTask(TaskTemplate* newTask){
+void ListsComposite::addTask(TasksComposite* newTask){
 
 	taskChildren.push_back(newTask);
 
@@ -61,7 +63,7 @@ void ListsComposite::removeAllTasks() {
 		taskChildren.clear();
 	
 }
-/*
+
 void ListsComposite::set_strategy(PrintStrat* s) {
         if (printStrat != nullptr) {
                 delete this->printStrat;
@@ -69,14 +71,22 @@ void ListsComposite::set_strategy(PrintStrat* s) {
         this->printStrat = s;
 }
 
-void ListsComposite::printByPriority(std::ostream& out) const {
+void ListsComposite::printByPriority(std::ostream& out) {
         if (!taskChildren.empty()) {
                 printStrat->printPriority(this);
         }
         else {
                 std::cout << "No tasks left." << std::endl;
         }
-}*/
+}
 
 //void ListsComposite::printByDate(std::ostream& out) const
-//void ListsComposite::printByDuration(std::ostream& out) const
+
+void ListsComposite::printByDuration(std::ostream& out) {
+        if (!taskChildren.empty()) {
+                printStrat->printDuration(this);
+        }
+        else {
+                std::cout << "No tasks left." << std::endl;
+        }
+}

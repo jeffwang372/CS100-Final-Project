@@ -12,6 +12,8 @@ ADD_EXECUTABLE(test
     tasktemplate.cpp
     taskscomposite.cpp
     listscomposite.cpp
+    printtaskstrat.cpp
+    printliststrat.cpp
 )
 
 
