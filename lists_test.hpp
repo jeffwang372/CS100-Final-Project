@@ -4,7 +4,7 @@
 #include "gtest/gtest.h"
 
 #include "listscomposite.hpp"
-
+#include "taskscomposite.hpp"
 
 TEST(ListCreation, List1) {
 
@@ -52,6 +52,29 @@ EXPECT_EQ("Title5", title);
 
 }//end test
 
+
+TEST(AddTask, List6) {
+
+ListsComposite* list6 = new ListsComposite( "Title6", 123);
+TasksComposite* task1 = new TasksComposite( "Time1", "Date1", 69, "Location1", "Subject1", "Body1", 0);
+list6->addTask(task1);
+string title = list6->getTitle();
+
+EXPECT_EQ("Title6", title);
+EXPECT_EQ(list6->taskChildren.size(), 1);
+
+}//end test
+
+
+TEST(EmptyList, List7) {
+
+ListsComposite* list7 = new ListsComposite( "Title7", 123);
+string title = list7->getTitle();
+
+EXPECT_EQ("Title7", title);
+EXPECT_EQ(list7->taskChildren.size(), 0);
+
+}//end test
 
 
 
