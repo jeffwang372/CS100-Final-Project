@@ -8,20 +8,20 @@ class TasksComposite:public TaskTemplate {
 	private:
 		string time;
 		string date;
-		string duration;
+		double duration;
 		string location;
 		string subject;
 		string body;
 		
 	public:
 		~TasksComposite();
-		TasksComposite(string time, string date, string duration, string location, string subject, string body, int ID);
+		TasksComposite(string time, string date, double duration, string location, string subject, string body, int ID);
 		string getTime();
 		string getLocation();
 		string getSubject();
 		string getBody();
 		string getDate();
-		string getDuration();
+		double getDuration();
 		virtual void addTask(TaskTemplate* newTask);
 		virtual void removeTask(int removeID);	
 		virtual void removeAllTasks();

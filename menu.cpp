@@ -7,7 +7,7 @@ Menu::~Menu() {
 	for ( unsigned int i = 0;  i < Lists.size(); ++i ){
 
                         delete Lists.at(i);
-                        //Lists.erase(Lists.begin());
+                        
                         
         }//end for to iterate to lists in menu to add task to specific list
               Lists.clear();
@@ -35,42 +35,60 @@ void Menu::createTask() {
 	int listInput;
 	string time;
         string date;
-        string duration;
+        double duration;
         string location;
         string subject;
         string body; 
 
 	cout << "Enter list ID to add task to: ";
-	cin >> listInput; //TODO: figure out how to push task into list
-	cout << "Enter time: ";
-	cin >> time;
-	cout << "Enter date: ";
-	cin >> date;
-	cout << "Enter duration: ";
-        cin >> duration;
-        cout << "Enter location: ";
-        cin >> location;
-	cout << "Enter subject: ";
-        cin >> subject;
-        cout << "Enter body: ";
-        cin >> body;
-	TasksComposite* task1 = new TasksComposite(time, date, duration, location, subject, body, taskID);
 	
-	
-	++taskID; //increment ID 
+	while (!(cin >> listInput)) {
+       		 cin.clear();
+       		 while (cin.get() != '\n') continue;
+      		  cout << "Invalid ID! " << endl;
+   		cout << "Enter list ID to add task to: "; 
+	}
+	 
 
 
 	for ( unsigned int i = 0;  i < Lists.size(); ++i ){
 
 		if(Lists.at(i)->getID() == listInput ) {
-			cout << "Pushing task to list" << endl;
-			Lists.at(i)->addTask(task1); //TODO: complete addTask to put task into LIST
+			cout << "Enter time: ";
+			getline(cin, time);
+			getline(cin, time);
+		        cout << "Enter date in format mm/dd (Example: March 2nd is 3/2): ";
+		        getline(cin, date);
+		        cout << "Enter duration in number of minutes: ";
+		        
+			while (!(cin >> duration)) {
+               			  cin.clear();
+               			  while (cin.get() != '\n') continue;
+               			   cout << "Invalid duration! " << endl;
+				cout << "Enter duration in number of minutes: ";
+		         }
+		
 
+			cout << "Enter location: ";
+		        getline(cin, location);
+			getline(cin, location);
+		        cout << "Enter subject: ";
+		        getline(cin, subject);
+		        cout << "Enter body: ";
+       			getline(cin, body);
+			cout << "New task created with ID: " << taskID << endl;
+		        TasksComposite* task1 = new TasksComposite(time, date, duration, location, subject, body, taskID);
+		
+			++taskID; //increment ID
+			
+			Lists.at(i)->addTask(task1);
+			cout << "Successfully added task to list." << endl;
+			return;
 		}//list ID found so add task to the list
 
 	}//end for to iterate to lists in menu to add task to specific list 
-
-
+cout << "Invalid list ID." << endl;
+return;
 }//end add Task 
 
 
@@ -79,10 +97,11 @@ void Menu::createList(){
 	string title;
 
 	cout << "Enter title for list: ";
-	cin >> title;
+	getline(cin, title);
+	getline(cin, title);
+	
 	ListsComposite* newList = new ListsComposite (title, listID);
 	++listID;
-	cout << "New LIST ID GLOBAL: " << listID << endl;
 
 	Lists.push_back(newList);
 
@@ -97,20 +116,40 @@ void Menu::deleteTask(){
 	int taskRemoveID;
 
 	cout << "Enter list ID to remove task from: " ;
-	cin >> listRemoveID;
+
+	while (!(cin >> listRemoveID)) {
+                 cin.clear();
+                 while (cin.get() != '\n') continue;
+                  cout << "Invalid list ID! " << endl;
+                cout << "Enter list ID to remove task from: ";
+        }
+
+
 	cout << endl << "Enter task ID to remove: " ;
-	cin >> taskRemoveID; 
- 	cout << endl;
+ 	
+	while (!(cin >> taskRemoveID)) {
+                 cin.clear();
+                 while (cin.get() != '\n') continue;
+                  cout << "Invalid task ID! " << endl;
+                cout << "Enter task ID to remove: ";
+        }
+
+	
+	cout << endl;
+
+
 
 	      for ( unsigned int i = 0;  i < Lists.size(); ++i ){
 
                 if(Lists.at(i)->getID() == listRemoveID ) {
-                        Lists.at(i)->removeTask(taskRemoveID); 
+                        Lists.at(i)->removeTask(taskRemoveID);
+			return; 
 
                 }//list ID found so remove task to the list
 
         }//end for to iterate to lists in menu to remove task to specific list
-
+cout << "List ID to remove task from not found." << endl;
+return;
 }//remove task from certain list
 
 
@@ -118,7 +157,14 @@ void Menu::removeList() {
 	int indexRemove;
 
 	cout << "Enter ID of list to be removed: ";
-	cin >> indexRemove;
+	while (!(cin >> indexRemove)) {
+                 cin.clear();
+                 while (cin.get() != '\n') continue;
+                  cout << "Invalid list ID! " << endl;
+                cout << "Enter ID of list to be removed: ";
+        }
+
+
 	cout << endl;
 
 
@@ -129,11 +175,13 @@ void Menu::removeList() {
 			delete Lists.at(i);
 			Lists.erase(Lists.begin() + i);
 			cout << "Successfully deleted list" << endl;
-
+			return;
                 }
-	}	
+	}
+cout << "List ID to be removed not found." << endl;
+return;	
 }
-
+/*
 void Menu::set_strategy(PrintStrat* s) {
         if (printStrat != nullptr) {
                 delete this->printStrat;
@@ -152,7 +200,7 @@ void Menu::printByPriority(std::ostream& out) const {
 		std::cout << "No lists left." << std::endl;
 	}	
 }
-
+*/
 //void Menu::printByDate(std::ostream& out) const
 //void Menu::printByDuration(std::ostream& out) const
 

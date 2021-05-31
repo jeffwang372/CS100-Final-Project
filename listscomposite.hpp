@@ -4,6 +4,7 @@
 #include "tasktemplate.hpp"
 #include "taskscomposite.hpp"
 
+
 class  ListsComposite: public TaskTemplate {
 
 	private:
@@ -21,8 +22,8 @@ class  ListsComposite: public TaskTemplate {
 	void removeTask(int removeID);
 	void removeAllTasks();	
 
-	void set_strategy(PrintStrat* s);
-	void printByPriority(std::ostream& out) const;
+	//void set_strategy(PrintStrat* s);
+	//void printByPriority(std::ostream& out) const;
 
 };//end class 
 
