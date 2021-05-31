@@ -11,7 +11,7 @@ The tools we will be using for this project include:
 * [Valgrind](https://valgrind.org/) - Memory leak detector
 * [CMake](https://cmake.org/) - Software for build automation, testing, packaging and installation of software
 
-This project will take in user task information such as title, date, time, duration, location, and priority. The organizer will also prompt the user for a description for each task they enter. This project will output tasks/events that can be further grouped into lists of tasks/events. The tasks can be displayed and organized by type, priority, or date/time. Tasks can also have subtasks. Tasks and task lists can also be removed when not needed anymore.
+This project will take in user task information such as title, date, time, duration, location, and priority. The organizer will also prompt the user for a description for each task they enter. This project will output tasks/events that can be further grouped into lists of tasks/events. The tasks can be displayed and organized by type, priority, or date/time. Tasks and task lists can also be removed when not needed anymore.
 
 The design patterns we will be using are:
 
@@ -19,7 +19,6 @@ COMPOSITE
 We chose this design pattern because we know that our project will involve aggregation. This means that the project can be implemented with a tree structure. We anticipate difficulty in implementing the list-task hierarchy, which the composite design pattern can solve because it allows us to treat individual objects and composition of objects uniformly. The recursive composition aspect of this design pattern will also allow us to more easily handle the list-task hierarchy when traversing, editing, or displaying components in a list.
 
 STRATEGY
-
 We chose this design pattern because it makes it easier to implement different variations of functions across the list and task classes. We anticipate that if we did not use the strategy pattern, it would be tedious and confusing to have to implement separate definitions everytime we wanted to make a variation of a function. By using the strategy pattern, we can implement different behaviors of the same function (such as print(), addMember(), etc) without having to edit as much code as you would otherwise. The inheritance factors out the common functionality of algorithms. This is a good solution because it eliminates redundancy, makes it more convenient to implement functions in the future, and makes it less confusing to develop.
 
  
