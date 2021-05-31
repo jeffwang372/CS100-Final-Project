@@ -13,20 +13,27 @@ class  ListsComposite: public TaskTemplate {
 		string title;
 	public:
 
-	vector<TasksComposite*> taskChildren;
+	vector<TaskTemplate*> taskChildren;
 
 	~ListsComposite();
 	ListsComposite(string title, int ID); //constructor
 	
 	string getTitle();
 	
-	void addTask(TasksComposite* newTask);
+	void addTask(TaskTemplate* newTask);
 	void removeTask(int removeID);
 	void removeAllTasks();	
 
 	void set_strategy(PrintStrat* s);
 	void printByPriority(std::ostream& out);
 	void printByDuration(std::ostream& out);
-};//end class 
 
+        virtual string getTime();
+        virtual string getLocation();
+        virtual string getSubject();
+        virtual string getBody();
+        virtual string getDate();
+        virtual double getDuration();
+	vector<TaskTemplate*> getTasks();
+};
 #endif
