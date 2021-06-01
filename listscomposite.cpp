@@ -65,9 +65,7 @@ void ListsComposite::removeAllTasks() {
 }
 
 void ListsComposite::set_strategy(PrintStrat* s) {
-        if (printStrat != nullptr) {
-                delete this->printStrat;
-        }
+
         this->printStrat = s;
 }
 
