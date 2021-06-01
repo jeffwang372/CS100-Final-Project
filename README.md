@@ -32,11 +32,7 @@ We chose this design pattern because it makes it easier to implement different v
  Phase III completed on May 18, 2021.
 
  > ## Final deliverable
- > All group members will give a demo to the TA during lab time. The TA will check the demo and the project GitHub repository and ask a few questions to all the team members. 
- > Before the demo, you should do the following:
- > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
- > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Kanban board. 
- 
+  
  ## Screenshots
  When starting the task scheduler, you will be greeted with this menu.
  > ![alt text](https://github.com/cs100/final-project-ssalt006_jwang619_nhuyn035-nacl/blob/master/CS100%20Project%20Documentation/CS100%20Screenshot%20Main%20Menu.JPG)
