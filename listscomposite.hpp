@@ -27,6 +27,7 @@ class  ListsComposite: public TaskTemplate {
 	void set_strategy(PrintStrat* s);
 	void printByPriority(std::ostream& out);
 	void printByDuration(std::ostream& out);
+	void printByDate(std::ostream& out);
 
         virtual string getTime();
         virtual string getLocation();

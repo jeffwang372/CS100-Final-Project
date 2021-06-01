@@ -80,7 +80,14 @@ void ListsComposite::printByPriority(std::ostream& out) {
         }
 }
 
-//void ListsComposite::printByDate(std::ostream& out) const
+void ListsComposite::printByDate(std::ostream& out) {
+        if (!taskChildren.empty()) {
+                printStrat->printDate(this);
+        }
+        else {
+                std::cout << "No tasks left." << std::endl;
+        }
+}
 
 void ListsComposite::printByDuration(std::ostream& out) {
         if (!taskChildren.empty()) {

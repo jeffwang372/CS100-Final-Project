@@ -201,7 +201,17 @@ void Menu::printByPriority(std::ostream& out) {
 	}	
 }
 
-//void Menu::printByDate(std::ostream& out) const
+void Menu::printByDate(std::ostream& out) {
+        if (!Lists.empty()) {
+                for (int i = 0; i < Lists.size(); ++i) {
+                        std::cout << Lists.at(i)->getID() << ": " << Lists.at(i)->getTitle() << std::endl;
+                        printStrat->printDate(Lists.at(i));
+                }
+        }
+        else {
+                std::cout << "No lists left." << std::endl;
+        }
+}
 
 void Menu::printByDuration(std::ostream& out) {
         if (!Lists.empty()) {
