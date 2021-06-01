@@ -1,4 +1,5 @@
 #include "taskscomposite.hpp"
+#include "printstrat.hpp"
 #include <iostream>
 
 TasksComposite::~TasksComposite() {
@@ -59,3 +60,8 @@ vector<TaskTemplate*> TasksComposite::getTasks() {
 	vector<TaskTemplate*> v; //empty vector
 	return v;
 }
+
+void TasksComposite::set_strategy(PrintStrat* s) {}
+void TasksComposite::printByPriority(std::ostream& out) {}
+void TasksComposite::printByDuration(std::ostream& out) {}
+void TasksComposite::printByDate(std::ostream& out) {}

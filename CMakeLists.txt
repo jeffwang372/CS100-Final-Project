@@ -18,12 +18,13 @@ ADD_EXECUTABLE(test
 
 
 ADD_EXECUTABLE(unit_test
-
+	menu.cpp
 	unit_tests.cpp
 	listscomposite.cpp
 	taskscomposite.cpp
 	tasktemplate.cpp	
-
+        printtaskstrat.cpp
+        printliststrat.cpp
 )
 
 

@@ -6,9 +6,6 @@
 class PrintStrat
 {
 public:
-	static bool comparatorID(TaskTemplate* lhs, TaskTemplate* rhs) {
-		return lhs->getID() < rhs->getID();
-        }
         static bool comparatorDuration(TaskTemplate* lhs, TaskTemplate* rhs) {
                 return lhs->getDuration() < rhs->getDuration();
         }

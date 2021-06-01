@@ -1,4 +1,5 @@
 #include "tasktemplate.hpp"
+#include "printstrat.hpp"
 
 TaskTemplate::TaskTemplate() {
 	ID = 0;	
