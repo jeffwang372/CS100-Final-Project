@@ -43,7 +43,15 @@ int main() {
 	if(taskMenu.userInput == "b" ) {
 		taskMenu.removeList();
 	}
+        if(taskMenu.userInput == "e" ) {
+                taskMenu.displayPriority();
+        }
+        if(taskMenu.userInput == "f" ) {
+                taskMenu.displayDate();
+        }
+        if(taskMenu.userInput == "g" ) {
+                taskMenu.displayDuration();
+        }
     }
-
     return 0;
 }

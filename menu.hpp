@@ -7,6 +7,8 @@
 #include "taskscomposite.hpp"
 #include "listscomposite.hpp"
 #include "printstrat.hpp"
+#include "printtaskstrat.hpp"
+#include "printliststrat.hpp"
 
 class Menu {
     public:
@@ -16,7 +18,7 @@ class Menu {
         vector<TaskTemplate*> Lists;
 	
 	~Menu();
-        Menu() {}
+        Menu() { printStrat = nullptr; }
         void createList();
         void removeList();
         void createTask();

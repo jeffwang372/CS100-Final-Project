@@ -189,6 +189,117 @@ void Menu::set_strategy(PrintStrat* s) {
         this->printStrat = s;
 }
 
+void Menu::displayPriority() {
+	char c;
+	cout << "Display all lists? (Y/N): ";
+	cin >> c;
+	while (c != 'Y' && c != 'N') { 
+		cout << "Display all lists? (Y/N): "; 
+		cin >> c;
+	}
+	if (c == 'Y') {
+		PrintStrat* ps = new PrintListStrat();				
+		set_strategy(ps);
+		printByPriority(std::cout);
+                delete ps;
+	}
+	else {
+        	int index;
+		cout << "Enter ID of list to be displayed: ";
+        	while (!(cin >> index)) {
+                	cin.clear();
+                	while (cin.get() != '\n') continue;
+                  	cout << "Invalid list ID! " << endl;
+                	cout << "Enter ID of list to be displayed: ";
+        	}
+		PrintStrat* ps = new PrintTaskStrat();
+		for (unsigned int i = 0;  i < Lists.size(); ++i ) {
+			if (Lists.at(i)->getID() == index) {
+				Lists.at(i)->set_strategy(ps);
+                                Lists.at(i)->printByPriority(std::cout);
+                                delete ps;
+                                return;
+			}
+		}
+		delete ps;
+		cout << "List ID not found." << endl;
+	}
+}
+
+void Menu::displayDate() {
+        char c;
+        cout << "Display all lists? (Y/N)";
+        cin >> c;
+        while (c != 'Y' && c != 'N') {
+                cout << "Display all lists? (Y/N)";
+                cin >> c;
+        }
+        if (c == 'Y') {
+                PrintStrat* ps = new PrintListStrat();
+                set_strategy(ps);
+                printByDate(std::cout);
+		delete ps;
+        }
+        else {
+                int index;
+                cout << "Enter ID of list to be displayed: ";
+                while (!(cin >> index)) {
+                        cin.clear();
+                        while (cin.get() != '\n') continue;
+                        cout << "Invalid list ID! " << endl;
+                        cout << "Enter ID of list to be displayed: ";
+                }
+                PrintStrat* ps = new PrintTaskStrat();
+                for (unsigned int i = 0;  i < Lists.size(); ++i ) {
+                        if (Lists.at(i)->getID() == index) {
+				Lists.at(i)->set_strategy(ps);
+                                Lists.at(i)->printByDate(std::cout);
+                                delete ps;
+				return;
+                        }
+                }
+		delete ps;
+                cout << "List ID not found." << endl;
+        }
+}
+
+void Menu::displayDuration() {
+        char c;
+        cout << "Display all lists? (Y/N)";
+        cin >> c;
+        while (c != 'Y' && c != 'N') {
+                cout << "Display all lists? (Y/N)";
+                cin >> c;
+        }
+        if (c == 'Y') {
+                PrintStrat* ps = new PrintListStrat();
+                set_strategy(ps);
+                printByDuration(std::cout);
+                delete ps;
+        }
+        else {
+                int index;
+                cout << "Enter ID of list to be displayed: ";
+                while (!(cin >> index)) {
+                        cin.clear();
+                        while (cin.get() != '\n') continue;
+                        cout << "Invalid list ID! " << endl;
+                        cout << "Enter ID of list to be displayed: ";
+                }
+                PrintStrat* ps = new PrintTaskStrat();
+                for (unsigned int i = 0;  i < Lists.size(); ++i ) {
+                        if (Lists.at(i)->getID() == index) {
+				Lists.at(i)->set_strategy(ps);
+                                Lists.at(i)->printByDuration(std::cout);
+				delete ps;
+                                return;
+                        }
+                }
+		delete ps;
+                cout << "List ID not found." << endl;
+        }
+}
+
 void Menu::printByPriority(std::ostream& out) {
 	if (!Lists.empty()) {
 		for (int i = 0; i < Lists.size(); ++i) {

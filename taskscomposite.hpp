@@ -3,6 +3,7 @@
 
 #include "tasktemplate.hpp"
 
+class PrintStrat;
 
 class TasksComposite: public TaskTemplate {
 	private:
@@ -27,6 +28,10 @@ class TasksComposite: public TaskTemplate {
 		virtual void removeAllTasks();
 		virtual string getTitle();
 		virtual vector<TaskTemplate*> getTasks();
+                virtual void set_strategy(PrintStrat* s);
+                virtual void printByPriority(std::ostream& out);
+                virtual void printByDuration(std::ostream& out);
+                virtual void printByDate(std::ostream& out);
 };
 
 

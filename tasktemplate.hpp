@@ -6,6 +6,8 @@
 
 using namespace std;
 
+class PrintStrat;
+
 class TaskTemplate {
 	protected:
 		int ID;
@@ -26,6 +28,11 @@ class TaskTemplate {
                 virtual string getDate() = 0;
                 virtual double getDuration() = 0;
 		virtual vector<TaskTemplate*> getTasks() = 0;
+        	virtual void set_strategy(PrintStrat* s) = 0;
+        	virtual void printByPriority(std::ostream& out) = 0;
+        	virtual void printByDuration(std::ostream& out) = 0;
+        	virtual void printByDate(std::ostream& out) = 0;
+
 };
 
 #endif
