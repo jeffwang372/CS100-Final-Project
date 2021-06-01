@@ -11,7 +11,7 @@ The tools we will be using for this project include:
 * [Valgrind](https://valgrind.org/) - Memory leak detector
 * [CMake](https://cmake.org/) - Software for build automation, testing, packaging and installation of software
 
-This project will take in user task information such as title, date, time, duration, location, and priority. The organizer will also prompt the user for a description for each task they enter. This project will output tasks/events that can be further grouped into lists of tasks/events. The tasks can be displayed and organized by type, priority, or date/time. Tasks and task lists can also be removed when not needed anymore.
+This project will take in user task information such as title, date, time, duration, location, and priority. The organizer will also prompt the user for a description for each task they enter. This project will output tasks/events that can be further grouped into lists of tasks/events. The tasks can be displayed and organized by priority, duration, or date. Tasks and task lists can also be removed when not needed anymore.
 
 The design patterns we will be using are:
 
@@ -24,18 +24,12 @@ We chose this design pattern because it makes it easier to implement different v
  
  > ## Phase II
 ## Class Diagram
- > ![alt text](https://github.com/cs100/final-project-ssalt006_jwang619_nhuyn035-nacl/blob/master/UMLFinalProject5.0.png)
+ > ![alt text](https://github.com/cs100/final-project-ssalt006_jwang619_nhuyn035-nacl/blob/master/UMLFinalProject6.0.png)
  > 
- We implemented the List and Task object using the Composite pattern where the Lists and Tasks inherit from a abstract TaskTemplate class. The ListComposite class acts as root node of our tree for our composite pattern while all other nodes will be a Task object.These objects contain descriptive information as well as vectors to each of their childrenTasks. They will also contain a pointer to the PrintStrat class which implements our print class. The print class is implemented using the Strategy pattern for the print functions of the list and task objects. Print Functions outputting priority,date,and durations are implemented differently depending on whether it is a task or a list object. The Menu class stores a vector that stores all lists created by user and holds all functions to serve as the user interface to operate the program. 
+ We implemented the List and Task object using the Composite pattern where the Lists and Tasks inherit from a abstract TaskTemplate class. The ListComposite class acts as root node of our tree for our composite pattern while all other nodes will be a Task object. The menu and listComposite classes each contain a pointer to the PrintStrat class which implements our print function. The PrintStrat class is implemented using the Strategy pattern for the print functions of the list and task objects. Print Functions outputting priority,date,and durations are implemented differently depending on whether it is a task or a list object. The Menu class stores a vector that stores all lists created by user and holds all functions to serve as the user interface to operate the program. 
  
  > ## Phase III
- > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
- > * Before the meeting you should perform a sprint plan like you did in Phase II
- > * In the meeting with your TA you will discuss: 
- >   - How effective your last sprint was (each member should talk about what they did)
- >   - Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
- >   - Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
- >   - What tasks you are planning for this next sprint.
+ Phase III completed on May 18, 2021.
 
  > ## Final deliverable
  > All group members will give a demo to the TA during lab time. The TA will check the demo and the project GitHub repository and ask a few questions to all the team members. 
