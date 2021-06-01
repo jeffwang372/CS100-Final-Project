@@ -76,7 +76,7 @@ void ListsComposite::printByPriority(std::ostream& out) {
                 printStrat->printPriority(this);
         }
         else {
-                std::cout << "No tasks left." << std::endl;
+                out << "No tasks left." << std::endl;
         }
 }
 
@@ -85,7 +85,7 @@ void ListsComposite::printByDate(std::ostream& out) {
                 printStrat->printDate(this);
         }
         else {
-                std::cout << "No tasks left." << std::endl;
+                out << "No tasks left." << std::endl;
         }
 }
 
@@ -94,7 +94,7 @@ void ListsComposite::printByDuration(std::ostream& out) {
                 printStrat->printDuration(this);
         }
         else {
-                std::cout << "No tasks left." << std::endl;
+                out << "No tasks left." << std::endl;
         }
 }
 

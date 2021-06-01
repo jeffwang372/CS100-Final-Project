@@ -308,7 +308,7 @@ void Menu::printByPriority(std::ostream& out) {
 		}
 	}
 	else {
-		std::cout << "No lists left." << std::endl;
+		out << "No lists left." << std::endl;
 	}	
 }
 
@@ -320,7 +320,7 @@ void Menu::printByDate(std::ostream& out) {
                 }
         }
         else {
-                std::cout << "No lists left." << std::endl;
+                out << "No lists left." << std::endl;
         }
 }
 
@@ -332,6 +332,6 @@ void Menu::printByDuration(std::ostream& out) {
                 }
         }
         else {
-                std::cout << "No lists left." << std::endl;
+                out << "No lists left." << std::endl;
         }
 }
