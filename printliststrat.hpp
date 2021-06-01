@@ -9,6 +9,7 @@ public:
         PrintListStrat();
         void printPriority(TaskTemplate* t);
 	void printDuration(TaskTemplate* t);
+	void printDate(TaskTemplate* t);
 }; //Print all tasks in order in all lists
 
 #endif
