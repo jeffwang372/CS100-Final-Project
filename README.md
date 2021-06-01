@@ -38,9 +38,55 @@ We chose this design pattern because it makes it easier to implement different v
  > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Kanban board. 
  
  ## Screenshots
- > Screenshots of the input/output after running your application
+ When starting the task scheduler, you will be greeted with this menu.
+ > ![alt text](https://github.com/cs100/final-project-ssalt006_jwang619_nhuyn035-nacl/blob/master/CS100%20Project%20Documentation/CS100%20Screenshot%20Main%20Menu.JPG)
+ 
+ Choose from the different options listed on the main menu to use the task scheduler. 
+ 
+ Entering "a" in the menu allows you to create a new list. The task scheduler will prompt you to enter the title of the new list. After this, the task scheduler will output the ID of the newly created list.
+ > ![alt text](https://github.com/cs100/final-project-ssalt006_jwang619_nhuyn035-nacl/blob/master/CS100%20Project%20Documentation/CS100%20Screenshot%20Creating%20List.JPG)
+ 
+ Entering "b" in the menu allows you to remove a list. The task scheduler will prompt you to enter the ID of an existing list that you want to remove.
+ > ![alt text](https://github.com/cs100/final-project-ssalt006_jwang619_nhuyn035-nacl/blob/master/CS100%20Project%20Documentation/CS100%20Screenshot%20Remove%20List.JPG)
+ 
+ Entering "c" in the menu allows you to create a new task. The task scheduler will prompt you to enter the ID of an existing list to add a task to. After this, the scheduler will prompt you for information (date, duration, location, etc.) for the task. When this is done, the ID of the newly created task is output.
+ > ![alt text](https://github.com/cs100/final-project-ssalt006_jwang619_nhuyn035-nacl/blob/master/CS100%20Project%20Documentation/CS100%20Screenshot%20Creating%20Task.JPG)
+ 
+ Entering "d" in the menu allows you to delete a task. The task scheduler will prompt you for the list ID and task ID of the task you want to remove. The scheduler will then remove the task.
+ > ![alt text](https://github.com/cs100/final-project-ssalt006_jwang619_nhuyn035-nacl/blob/master/CS100%20Project%20Documentation/CS100%20Screenshot%20Remove%20Task.JPG)
+ 
+ Entering "e" in the menu allows you to print out the lists and tasks in order of priority (meaning in the order that the tasks were created). The scheduler will ask if you want to display all lists. Entering "Y" displays all the lists by priority.
+ > ![alt text](https://github.com/cs100/final-project-ssalt006_jwang619_nhuyn035-nacl/blob/master/CS100%20Project%20Documentation/CS100%20Screenshot%20Print%20Priority%20All%20Lists.JPG)
+
+Entering "N" prompts you to enter the ID of the list you want to print by priority.
+ > ![alt text](https://github.com/cs100/final-project-ssalt006_jwang619_nhuyn035-nacl/blob/master/CS100%20Project%20Documentation/CS100%20Screenshot%20Print%20Priority%20One%20List.JPG)
+ 
+ Entering "f" in the menu allows you to print out the lists and tasks in order of date. The scheduler will ask if you want to display all lists. Entering "Y" displays all the lists by date.
+ > ![alt text](https://github.com/cs100/final-project-ssalt006_jwang619_nhuyn035-nacl/blob/master/CS100%20Project%20Documentation/CS100%20Screenshot%20Print%20Date%20All%20Lists.JPG)
+ 
+ Entering "N" prompts you to enter the ID of the list you want to print by date.
+ > ![alt text](https://github.com/cs100/final-project-ssalt006_jwang619_nhuyn035-nacl/blob/master/CS100%20Project%20Documentation/CS100%20Screenshot%20Print%20Date%20One%20List.JPG)
+ 
+ Entering "g" in the menu allows you to print out the lists and tasks in order of increasing duration. The scheduler will ask if you want to display all lists. Entering "Y" displays all the lists by increasing duration.
+ > ![alt text](https://github.com/cs100/final-project-ssalt006_jwang619_nhuyn035-nacl/blob/master/CS100%20Project%20Documentation/CS100%20Screenshot%20Print%20Duration%20All%20Lists.JPG)
+ 
+ Entering "N" prompts you to enter the ID of the list you want to print by increasing duration.
+ > ![alt text](https://github.com/cs100/final-project-ssalt006_jwang619_nhuyn035-nacl/blob/master/CS100%20Project%20Documentation/CS100%20Screenshot%20Print%20Duration%20One%20List.JPG)
+
+Entering "q" in the main menu exits the program.
+ > ![alt text](https://github.com/cs100/final-project-ssalt006_jwang619_nhuyn035-nacl/blob/master/CS100%20Project%20Documentation/CS100%20Screenshot%20Quit.JPG)
+
+Note: In all the steps above where the scheduler prompts the user for an ID, an "Invalid ID" error message will be output if an invalid ID is entered.
+
  ## Installation/Usage
- > Instructions on installing and running your application
+1. Login to hammer through PuTTY.
+2. Recursively git clone this GitHub repository into your local repository on hammer.
+3. Change directory (cd) into the directory you just cloned from this GitHub repository.
+4. Run the command "cmake3 ."
+5. Run the command "make"
+6. Run the executable "./test"
+7. The main menu screen for the task scheduler will appear. The different options for using the task scheduler are listed on the main menu. Follow the screenshots listed above for further details on how to use the different options.
+
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+ To test/validate our project, we created unit tests to test the different classes in our project. These unit tests were ran using Google Test. We also used Valgrind to help us make sure that our project does not have any memory leaks.
  
